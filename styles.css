@@ -1,10 +1,8 @@
 .class1 {
-  text-align: Center;
+  c;
 }
 
 .centered-div {
-  height1: 100vh;
   display: flex;
-  justify-content: center;
-  align-item: center;
+  text-align: Center;
 }
