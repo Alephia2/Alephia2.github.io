@@ -2,7 +2,9 @@
   text-align: Center;
 }
 
-.images1 {
-  position: fized;
-  top: 100px; left:50;
+.centered-div {
+  height1: 100vh;
+  display: flex;
+  justify-content: center;
+  align-item: center;
 }
