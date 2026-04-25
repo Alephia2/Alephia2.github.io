@@ -1,10 +1,10 @@
 .class1 {
-  c;
+  text-align: center;
 }
 
 .centered-div {
   display: flex;
-  text-align: Center;
+  text-align: center;
 }
 
 .home-page-image {
