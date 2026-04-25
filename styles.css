@@ -10,13 +10,12 @@
 }
 
 .home-page-image {
-    width: 300px;
+    width: 717px;
     height: auto;
 }
 
 .navbar{
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
+  gap: 75px;
+  text-align: center
 }
