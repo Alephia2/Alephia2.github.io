@@ -1,0 +1,53 @@
+.class1 {
+  text-align: center;
+}
+
+.centered-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.home-page-image {
+    width: 600px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    gap: 75px;
+    text-align: center;
+    justify-content: center;
+}
+
+/* ABOUT PAGE */
+
+.about-page-image {
+    width: 200px;
+    height: auto;
+    float: left;
+    margin-left: 15px;
+}
+
+.indent {
+  text-indent: 40px;
+  display:flex;
+  align-items: center;
+  gap: 15px;
+  float: left;
+
+}
+
+/* Facts PAGE */
+.bold {
+  font-weight: bold;
+
+}
+
+.indent2 {
+  text-indent: 20px;
+  display:inline-flex;
+  align-items: left;
+
+}
