@@ -51,3 +51,33 @@
   align-items: left;
 
 }
+
+
+/* FLEX PROPERTY MASTERCLASS */
+.flex-table {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  width: 100%;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+
+.cell {
+  height: 50px;
+  font-size: 20px;
+  /* background-color: lightblue;*/
+
+  flex: 1 1 calc(33.333% - 2px);
+  padding: 50px;
+  min-height:10px;
+
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+}
