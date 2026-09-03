@@ -81,3 +81,19 @@
   box-sizing: border-box;
   text-align: center;
 }
+
+.class3 {
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.bkg {
+    display: grid;
+            width: 200px;
+            height: 200px;      
+            place-items: center;
+            background-color: #f0f0f0;
+}
