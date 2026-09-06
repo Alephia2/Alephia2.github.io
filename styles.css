@@ -52,8 +52,6 @@
 
 }
 
-
-/* FLEX PROPERTY MASTERCLASS */
 .flex-table {
   display: flex;
   justify-content: space-around;
@@ -69,7 +67,6 @@
 .cell {
   height: 50px;
   font-size: 20px;
-  /* background-color: lightblue;*/
 
   flex: 1 1 calc(33.333% - 2px);
   padding: 50px;
