@@ -1,34 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Andy - Blog Page</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column; 
-            justify-content: flex-start;
-            align-items: flex-start;
-            min-height: 100vh;
             margin: 0;
-            padding: 15px;
+            padding: 20px;
+            font-family: sans-serif;
+            background-color: #f9f9f9;
         }
+
+        /* The grid container holding both columns */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 40px;                      /* Clear spacing between the two columns */
+            max-width: 1200px;
+            margin: 0 auto;                 /* Centers the layout on the screen */
+        }
+
+        /* Individual column settings */
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;                      /* Spacing between items inside a single column */
+        }
+
+        /* Image styling */
         .bkg {
-            width: 30%;           
-            height: 300px;
-            opacity: 0.5;           
+            width: 100%;           
+            height: 250px;
+            opacity: 0.7;           
             object-fit: cover;
             object-position: center;
-            display: block;
-            margin-bottom: 15px;
+            border-radius: 8px;            /* Optional: Softens image corners */
+        }
+
+        /* Optional Text Styling */
+        h1 {
+            margin-top: 0;
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
         }
     </style>
 </head>  
 <body>
 
-    <img class="bkg" src="https://i.ytimg.com/vi/OzDysFxdUSQ/maxresdefault.jpg" alt="Andy Margallo">
-    <img class="bkg" src="https://i.pinimg.com/736x/fd/9a/8a/fd9a8a1a6440dba6ac306b2d017979c9.jpg" alt="Andy Margallo">
-    <img class="bkg" src="https://i.pinimg.com/736x/20/95/89/2095898d16d0b8e493992f9755c22e83.jpg" alt="Andy Margallo">
+    <div class="blog-container">
+        
 
+        <div class="column">
+            <img class="bkg" src="https://i.ytimg.com/vi/OzDysFxdUSQ/maxresdefault.jpg" alt="Andy Margallo">
+            <img class="bkg" src="https://i.pinimg.com/736x/fd/9a/8a/fd9a8a1a6440dba6ac306b2d017979c9.jpg" alt="Andy Margallo">
+            <img class="bkg" src="https://i.pinimg.com/736x/20/95/89/2095898d16d0b8e493992f9755c22e83.jpg" alt="Andy Margallo">
+        </div>
+        
+        <div class="column">
+            <h1>Andy Margallo</h1>
+            <p>Welcome to my blog. This column is dedicated completely to your text content, paragraphs, headers, and descriptions.</p>
+            <p>Because it is separated into its own structural grid item, your text will naturally stack and wrap without clashing with the layout of your images on the left side.</p>
+        </div>
+
+    </div>
 
 </body>
 </html>
