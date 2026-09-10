@@ -3,7 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Andy - Blog Page</title>
-    <style>
+</head>  
+<body>
+
+    <div class="blog-container">
+        
+
+        <div class="column">
+            <img class="bkg" src="https://i.ytimg.com/vi/OzDysFxdUSQ/maxresdefault.jpg" alt="Andy Margallo">
+            <img class="bkg" src="https://i.pinimg.com/736x/fd/9a/8a/fd9a8a1a6440dba6ac306b2d017979c9.jpg" alt="Andy Margallo">
+            <img class="bkg" src="https://i.pinimg.com/736x/20/95/89/2095898d16d0b8e493992f9755c22e83.jpg" alt="Andy Margallo">
+        </div>
+        
+      <!-- RIGHT COLUMN: All Texts -->
+<div class="column">
+            
+            <!-- NEW EXPANDABLE SECTION -->
+            <div class="expandable-post">
+                <h1 class="post-title">My Journey Into Coding</h1>
+                
+                <p class="post-preview">
+                    This is the preview text of the blog. It gives the reader a quick snippet of what the story is about before they choose to read the rest...
+                </p>
+                <details>
+                    <summary>
+                        <span class="see-more-btn">See more</span>
+                    </summary>
+                    <div class="full-content">
+                        <p>...And here is the hidden content that expands seamlessly! You can put your full blog paragraphs, hidden links, or extra details right here inside this block.</p>
+                        <p>Clicking "See more" again will cleanly collapse this section right back up.</p>
+                    </div>
+                </details>
+
+                 <h1 class="post-title">My Journey Into Coding</h1>
+                
+                <p class="post-preview">
+                    This is the preview text of the blog. It gives the reader a quick snippet of what the story is about before they choose to read the rest...
+                </p>
+                <details>
+                    <summary>
+                        <span class="see-more-btn">See more</span>
+                    </summary>
+                    <div class="full-content">
+                        <p>...And here is the hidden content that expands seamlessly! You can put your full blog paragraphs, hidden links, or extra details right here inside this block.</p>
+                        <p>Clicking "See more" again will cleanly collapse this section right back up.</p>
+                    </div>
+                </details>
+
+
+
+
+            </div>
+        </div>
+</div>
+
+</body>
+
+<style>
         body {
             margin: 0;
             padding: 20px;
@@ -14,9 +70,9 @@
         /* The grid container holding both columns */
         .blog-container {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            grid-template-columns: 1fr 2fr; /* Two equal columns */
             gap: 40px;                      /* Clear spacing between the two columns */
-            max-width: 1200px;
+            max-width: 2000px;
             margin: 0 auto;                 /* Centers the layout on the screen */
         }
 
@@ -29,7 +85,7 @@
 
         /* Image styling */
         .bkg {
-            width: 100%;           
+            width: 500px;           
             height: 250px;
             opacity: 0.7;           
             object-fit: cover;
@@ -46,26 +102,61 @@
             color: #666;
             line-height: 1.6;
         }
+
+          /* --- New Expandable Section Styling --- */
+        .expandable-post {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .post-title {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .post-preview {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+  /* Hides the default browser arrow next to <summary> */
+        details summary {
+            list-style: none;
+            outline: none;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Styles the "See more" text like a clickable link/button */
+        .see-more-btn {
+            color: #0066cc;
+            cursor: pointer;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .see-more-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* When the details box is OPEN, change the "See more" text behavior or style if desired */
+        details[open] summary .see-more-btn {
+            margin-bottom: 10px;
+        }
+
+        .full-content {
+            color: #444;
+            line-height: 1.6;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+        }
+
     </style>
-</head>  
-<body>
 
-    <div class="blog-container">
-        
-
-        <div class="column">
-            <img class="bkg" src="https://i.ytimg.com/vi/OzDysFxdUSQ/maxresdefault.jpg" alt="Andy Margallo">
-            <img class="bkg" src="https://i.pinimg.com/736x/fd/9a/8a/fd9a8a1a6440dba6ac306b2d017979c9.jpg" alt="Andy Margallo">
-            <img class="bkg" src="https://i.pinimg.com/736x/20/95/89/2095898d16d0b8e493992f9755c22e83.jpg" alt="Andy Margallo">
-        </div>
-        
-        <div class="column">
-            <h1>Andy Margallo</h1>
-            <p>Welcome to my blog. This column is dedicated completely to your text content, paragraphs, headers, and descriptions.</p>
-            <p>Because it is separated into its own structural grid item, your text will naturally stack and wrap without clashing with the layout of your images on the left side.</p>
-        </div>
-
-    </div>
-
-</body>
 </html>
