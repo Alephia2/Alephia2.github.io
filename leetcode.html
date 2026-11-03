@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Andy - Daily LeetCode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="page">
+
+<!-- ================= LEETCODE LOG ================= -->
+<div class="lc-banner" id="leetcode">
+    <div class="lc-banner-top">
+        <h1>Daily LeetCode</h1>
+    </div>
+    <p>One problem a day, plus how the day felt.</p>
+    <div class="lc-stats" id="lc-stats"></div>
+</div>
+
+<!-- PASTE NEW LEETCODE ENTRIES HERE (newest on top). Template: leetcode-entry-template.html -->
+
+<!-- SAMPLE ENTRY 1: delete this whole block when you add your own -->
+<div class="expandable-post">
+    <div class="lc-top">
+        <span>November 3, 2026</span>
+        <span class="lc-diff easy">Easy</span>
+    </div>
+    <h3 class="lc-title"><a href="https://leetcode.com/problems/two-sum/" target="_blank">1. Two Sum</a></h3>
+    <p class="lc-tags"><span>Array</span><span>Hash Table</span></p>
+    <details>
+        <summary><span class="see-more-btn">See more</span></summary>
+        <div class="full-content">
+            <p class="lc-label">How I solved it</p>
+            <script type="text/plain" class="lc-text">
+Sample notes. Brute force checks every pair, which is O(n^2). Instead I store each number in a dictionary as I go, and for every new number I check if its partner (target - n) was already seen.
+
+Time O(n), space O(n).
+            </script>
+            <p class="lc-label">Code</p>
+            <script type="text/plain" class="lc-code" data-lang="Python">
+class Solution:
+    def twoSum(self, nums, target):
+        seen = {}
+        for i, n in enumerate(nums):
+            if target - n in seen:
+                return [seen[target - n], i]
+            seen[n] = i
+            </script>
+            <p class="lc-label">Diary</p>
+            <script type="text/plain" class="lc-text lc-diary">
+Sample diary. Short day, tired after class, but getting one easy problem done made it feel okay.
+
+Tomorrow: try a medium.
+            </script>
+        </div>
+    </details>
+</div>
+
+<!-- SAMPLE ENTRY 2: delete this whole block when you add your own -->
+<div class="expandable-post">
+    <div class="lc-top">
+        <span>November 2, 2026</span>
+        <span class="lc-diff medium">Medium</span>
+    </div>
+    <h3 class="lc-title"><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank">11. Container With Most Water</a></h3>
+    <p class="lc-tags"><span>Two Pointers</span><span>Greedy</span></p>
+    <details>
+        <summary><span class="see-more-btn">See more</span></summary>
+        <div class="full-content">
+            <p class="lc-label">How I solved it</p>
+            <script type="text/plain" class="lc-text">
+Sample notes. Start with pointers at both ends and always move the shorter wall inward, since the taller one can't do better with a smaller width.
+            </script>
+            <p class="lc-label">Code</p>
+            <script type="text/plain" class="lc-code" data-lang="C++">
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int l = 0, r = height.size() - 1, best = 0;
+        while (l < r) {
+            best = max(best, min(height[l], height[r]) * (r - l));
+            if (height[l] < height[r]) l++; else r--;
+        }
+        return best;
+    }
+};
+            </script>
+            <p class="lc-label">Diary</p>
+            <script type="text/plain" class="lc-text lc-diary">
+Sample diary. Got stuck for an hour before the two-pointer idea clicked. Frustrating, but worth it.
+            </script>
+        </div>
+    </details>
+</div>
+
+</div>
+
+<script>
+/* Turns the "paste here" blocks into readable text/code. Nothing to edit. */
+document.querySelectorAll('script[type="text/plain"]').forEach(function (s) {
+    var el = document.createElement('pre');
+    el.className = s.className;
+    if (s.dataset.lang) el.dataset.lang = s.dataset.lang;
+    el.textContent = s.textContent.replace(/^\n+/, '').replace(/\s+$/, '');
+    s.replaceWith(el);
+});
+
+/* Banner counts (updates by itself) */
+var stats = document.getElementById('lc-stats');
+if (stats) {
+    var count = function (c) { return document.querySelectorAll('.lc-diff.' + c).length; };
+    var total = document.querySelectorAll('.lc-diff').length;
+    stats.innerHTML = '<span class="lc-total">' + total + (total === 1 ? ' problem' : ' problems') + ' solved</span>' +
+        ['easy', 'medium', 'hard'].map(function (c) {
+            return '<span class="lc-stat ' + c + '">' + count(c) + ' ' + c.charAt(0).toUpperCase() + c.slice(1) + '</span>';
+        }).join('');
+}
+</script>
+
+</body>
+ <style>
+        body { margin: 0; padding: 30px 20px 60px; font-family: sans-serif; background-color: #f4f5f7; }
+        .page { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+        .expandable-post { background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e1e4e8; }
+        details summary { list-style: none; outline: none; }
+        details summary::-webkit-details-marker { display: none; }
+        .see-more-btn { color: #0066cc; cursor: pointer; font-weight: bold; display: inline-block; }
+        .see-more-btn:hover { text-decoration: underline; }
+        .full-content { color: #444; line-height: 1.6; padding-top: 15px; margin-top: 10px; border-top: 1px dashed #ddd; }
+
+        /* ===== Daily LeetCode section ===== */
+
+        /* Banner */
+        .lc-banner { background: #1e2128; color: #e6e9ef; padding: 26px 28px 22px; border-radius: 8px; }
+        .lc-banner-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+        .lc-banner h1 { margin: 0; font-size: 2rem; letter-spacing: -0.01em; color: #fff; }
+        .lc-banner a { color: #9cc4ff; font-size: 0.9rem; text-decoration: none; }
+        .lc-banner a:hover { text-decoration: underline; }
+        .lc-banner p { margin: 6px 0 0; color: #a9b0bf; }
+        .lc-stats { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 20px; padding-top: 16px; border-top: 1px solid #343a47; font-size: 0.92rem; }
+        .lc-total { font-weight: bold; color: #fff; }
+        .lc-stat { display: inline-flex; align-items: center; gap: 7px; color: #c5cbd8; }
+        .lc-stat::before { content: ""; width: 9px; height: 9px; border-radius: 50%; }
+        .lc-stat.easy::before   { background: #4cc784; }
+        .lc-stat.medium::before { background: #f0b03a; }
+        .lc-stat.hard::before   { background: #f2686f; }
+
+
+        /* Entry card: left stripe shows difficulty */
+        .expandable-post:has(.lc-diff)        { border-left: 5px solid #c9cfd9; }
+        .expandable-post:has(.lc-diff.easy)   { border-left-color: #2da05a; }
+        .expandable-post:has(.lc-diff.medium) { border-left-color: #e29a14; }
+        .expandable-post:has(.lc-diff.hard)   { border-left-color: #d9363e; }
+        .expandable-post:has(details[open])   { box-shadow: 0 8px 22px rgba(30, 33, 40, 0.09); }
+
+        .lc-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.9rem; }
+        .lc-top span:first-child { font-weight: 600; color: #555; }
+        .lc-diff { padding: 2px 11px; border-radius: 999px; font-size: 0.8rem; font-weight: bold; }
+        .lc-diff.easy   { background: #e3f6ea; color: #1a7f43; }
+        .lc-diff.medium { background: #fff1d1; color: #9a5b00; }
+        .lc-diff.hard   { background: #fde3e3; color: #c0262d; }
+
+        .lc-title { margin: 0 0 10px; font-size: 1.4rem; line-height: 1.25; }
+        .lc-title a { color: #222; text-decoration: none; }
+        .lc-title a:hover { color: #0066cc; text-decoration: underline; }
+
+        .lc-tags { margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+        .lc-tags span { background: #eef1f5; color: #555; padding: 2px 10px; border-radius: 4px; font-size: 0.82rem; }
+
+        /* See more / See less pill */
+        .expandable-post:has(.lc-diff) .see-more-btn { padding: 5px 14px; border: 1px solid #cfd8e6; border-radius: 999px; font-size: 0.88rem; }
+        .expandable-post:has(.lc-diff) .see-more-btn::after { content: "\25BE"; margin-left: 7px; }
+        .expandable-post:has(.lc-diff) .see-more-btn:hover { background: #f0f5fc; text-decoration: none; }
+        .expandable-post:has(.lc-diff) details[open] .see-more-btn { font-size: 0; }
+        .expandable-post:has(.lc-diff) details[open] .see-more-btn::after { content: "See less \25B4"; font-size: 0.88rem; margin: 0; }
+        details summary:focus-visible .see-more-btn { outline: 2px solid #0066cc; outline-offset: 3px; }
+
+        /* Expanded content */
+        .lc-label { margin: 22px 0 8px; font-weight: bold; color: #222; }
+        .full-content > .lc-label:first-child { margin-top: 0; }
+        .lc-text { margin: 0; font: inherit; white-space: pre-line; }
+        .lc-diary { background: #f6f8fb; padding: 14px 16px; border-left: 3px solid #b9c4d6; border-radius: 0 6px 6px 0; }
+
+        .lc-code { margin: 0; padding: 16px 18px; background: #1e2128; color: #e6e9ef; border-radius: 6px; overflow-x: auto; font: 13px/1.65 "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; }
+        .lc-code[data-lang]::before { content: attr(data-lang); display: block; margin-bottom: 10px; color: #7f8aa0; font-size: 12px; }
+    </style>
+</html>
