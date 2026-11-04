@@ -44,41 +44,33 @@ Ultimately chose an algorithm to read and linear serach from right to left to co
         </details>
     </div>
 
-    <!-- SAMPLE ENTRY 2: delete this whole block when you add your own -->
     <div class="expandable-post">
-        <h2 class="post-title"><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank">11. Container With Most Water</a></h2>
-        <p class="post-preview">November 2, 2026 <span class="lc-diff medium">Medium</span></p>
+        <h2 class="post-title"><a href="https://leetcode.com/problems/roman-to-integer" target="_blank">Roman to Integer</a></h2>
+        <p class="post-preview">November 3, 2026 <span class="lc-diff easy">Easy</span></p>
         <details>
             <summary><span class="see-more-btn">See more</span></summary>
             <div class="full-content">
-                <p class="lc-label">How I solved it</p>
+                <p class="lc-label">Solution</p>
                 <script type="text/plain" class="lc-text">
-Sample notes. Two pointers at both ends, always move the shorter wall inward.
+Problem requires to know that given an integer x, return true if the number is a pallindrome (the same reversed), and false if not. One universal rule is a negative number will always return false. 
+
+-initially thought of a oslution requiring an algorithm to reverse it then compare each number with a corresponding number. but You dont need to reverse it. Once you extract the number in an array, just compare it with a corresponding number on the end. No reversing needed.
+
+-Make use of remainder property of deviding by 10. When getting the remainder of any number when dividing by 10, you get the last digit. 
+
+
                 </script>
-                <p class="lc-label">Code</p>
-                <script type="text/plain" class="lc-code" data-lang="C++">
-class Solution {
-public:
-    int maxArea(vector<int>& height) {
-        int l = 0, r = height.size() - 1, best = 0;
-        while (l < r) {
-            best = max(best, min(height[l], height[r]) * (r - l));
-            if (height[l] < height[r]) l++; else r--;
-        }
-        return best;
-    }
-};
-                </script>
-                <p class="lc-label">Diary</p>
+
+                <p class="lc-label">Notes</p>
                 <script type="text/plain" class="lc-text lc-diary">
-Sample diary. Got stuck for an hour before the two-pointer idea clicked. Worth it.
+Again got stuck on a lot of bugs and 2 hours of trying to figure out that you dont need to reverse the numberr
                 </script>
             </div>
         </details>
     </div>
 
-</div>
-
+    <!-- SAMPLE ENTRY 2: delete this whole block when you add your own -->
+   
 <script>
 /* Turns the "paste here" blocks into readable text/code. Nothing to edit. */
 document.querySelectorAll('script[type="text/plain"]').forEach(function (s) {
